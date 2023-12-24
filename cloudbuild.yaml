@@ -1,5 +1,5 @@
 steps:
-  - name: 'grc.io/cloud-builders/docker'
+  - name: 'gcr.io/cloud-builders/docker'
     args:
       [
         'build',
@@ -12,11 +12,9 @@ steps:
     args: 
       [
       'push',
-      '-t',
       'gcr.io/$PROJECT_ID/fullstack:$SHORT_SHA',
-      '.'
       ]
-      
+
   - name: 'gcr.io/cloud-builders/gcloud'
     args:
       [
@@ -33,4 +31,4 @@ steps:
       ]
     entrypoint: gcloud
 
-images: ['']
+images: ['gcr.io/$PROJECT_ID/fullstack']
