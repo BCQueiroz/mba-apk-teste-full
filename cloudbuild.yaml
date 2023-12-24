@@ -27,7 +27,7 @@ steps:
         'us-central1',
         '--platform',
         'managed',
-        '--allow-unautenticated'
+        '--allow-unauthenticated'
       ]
     entrypoint: gcloud
 
