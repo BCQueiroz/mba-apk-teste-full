@@ -21,5 +21,5 @@ app.get('/data', async (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log(`Testando servidor, ${port}`)
+    console.log(`Testando servidor de teste, ${port}`)
 })
