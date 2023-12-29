@@ -1,4 +1,5 @@
 require('dotenv').config()
+const helmet = require('helmet')
 const postgres = require('postgres')
 const cool = require('cool-ascii-faces')
 const express = require('express')
@@ -7,8 +8,10 @@ const app = express()
 
 const postgresConnection = postgres(process.env.DB_CONNECTION, {})
 
-app.get('/', (req, res) => {
-    console.log('Hello World.')
+app.use(helmet())
+
+app.get('/message', (req, res) => {
+    res.json({mes:'Hello World.'})
 })
 
 app.get('/cool', (req, res) => {
